@@ -12,6 +12,8 @@
 		E15D70642131DA0300D2FFBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E15D70622131DA0300D2FFBF /* Main.storyboard */; };
 		E15D70662131DA0300D2FFBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E15D70652131DA0300D2FFBF /* Assets.xcassets */; };
 		E15D70692131DA0300D2FFBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E15D70672131DA0300D2FFBF /* LaunchScreen.storyboard */; };
+		E15D70732131DA3F00D2FFBF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15D70722131DA3F00D2FFBF /* HealthKit.framework */; };
+		E15D70792131E15400D2FFBF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15D70782131E15400D2FFBF /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,9 @@
 		E15D70652131DA0300D2FFBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E15D70682131DA0300D2FFBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E15D706A2131DA0400D2FFBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E15D70702131DA3F00D2FFBF /* BPM Music.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BPM Music.entitlements"; sourceTree = "<group>"; };
+		E15D70722131DA3F00D2FFBF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		E15D70782131E15400D2FFBF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15D70732131DA3F00D2FFBF /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +46,7 @@
 			children = (
 				E15D705D2131DA0300D2FFBF /* BPM Music */,
 				E15D705C2131DA0300D2FFBF /* Products */,
+				E15D70712131DA3F00D2FFBF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +61,24 @@
 		E15D705D2131DA0300D2FFBF /* BPM Music */ = {
 			isa = PBXGroup;
 			children = (
+				E15D70702131DA3F00D2FFBF /* BPM Music.entitlements */,
 				E15D705E2131DA0300D2FFBF /* AppDelegate.swift */,
 				E15D70602131DA0300D2FFBF /* ViewController.swift */,
+				E15D70782131E15400D2FFBF /* MainView.swift */,
 				E15D70622131DA0300D2FFBF /* Main.storyboard */,
 				E15D70652131DA0300D2FFBF /* Assets.xcassets */,
 				E15D70672131DA0300D2FFBF /* LaunchScreen.storyboard */,
 				E15D706A2131DA0400D2FFBF /* Info.plist */,
 			);
 			path = "BPM Music";
+			sourceTree = "<group>";
+		};
+		E15D70712131DA3F00D2FFBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E15D70722131DA3F00D2FFBF /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +113,14 @@
 				TargetAttributes = {
 					E15D705A2131DA0300D2FFBF = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -136,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E15D70612131DA0300D2FFBF /* ViewController.swift in Sources */,
+				E15D70792131E15400D2FFBF /* MainView.swift in Sources */,
 				E15D705F2131DA0300D2FFBF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "BPM Music/BPM Music.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8H42K56829;
 				INFOPLIST_FILE = "BPM Music/Info.plist";
@@ -298,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "BPM Music/BPM Music.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8H42K56829;
 				INFOPLIST_FILE = "BPM Music/Info.plist";

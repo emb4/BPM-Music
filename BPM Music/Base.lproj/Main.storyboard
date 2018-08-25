@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,76 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BPM_Music" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kM-rg-HWo">
+                                <rect key="frame" x="115" y="445" width="145" height="30"/>
+                                <state key="normal" title="enable health access"/>
+                                <connections>
+                                    <action selector="healthButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EaG-48-d3U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="015-ys-Hlm">
+                                <rect key="frame" x="42" y="483" width="291" height="30"/>
+                                <state key="normal" title="enable spotify (button isn't hooked up yet)"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHE-eW-pou">
+                                <rect key="frame" x="157" y="617" width="60" height="30"/>
+                                <state key="normal" title="continue"/>
+                                <connections>
+                                    <segue destination="zMv-Ai-gX5" kind="show" id="J17-ea-2lK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8kM-rg-HWo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="425" id="5K9-OF-Da0"/>
+                            <constraint firstItem="8kM-rg-HWo" firstAttribute="centerX" secondItem="015-ys-Hlm" secondAttribute="centerX" id="DEk-Bm-7QG"/>
+                            <constraint firstAttribute="bottom" secondItem="tHE-eW-pou" secondAttribute="bottom" constant="20" symbolic="YES" id="PYz-cn-FGY"/>
+                            <constraint firstItem="015-ys-Hlm" firstAttribute="centerX" secondItem="tHE-eW-pou" secondAttribute="centerX" id="WGT-pl-EZ8"/>
+                            <constraint firstItem="015-ys-Hlm" firstAttribute="top" secondItem="8kM-rg-HWo" secondAttribute="bottom" constant="8" symbolic="YES" id="Zt6-2g-7yd"/>
+                            <constraint firstItem="tHE-eW-pou" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ufJ-wg-0qu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Main View-->
+        <scene sceneID="wZI-Ij-Guu">
+            <objects>
+                <viewController id="zMv-Ai-gX5" customClass="MainView" customModule="BPM_Music" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zLM-Ur-J3w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart Rate Goes Here (if you can see this there probably isn't any heart rate data)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJU-c5-sWf">
+                                <rect key="frame" x="56" y="20" width="262" height="163"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="94u-sa-ltZ" firstAttribute="bottom" secondItem="VJU-c5-sWf" secondAttribute="bottom" constant="484" id="3OX-D0-A7U"/>
+                            <constraint firstItem="VJU-c5-sWf" firstAttribute="top" secondItem="94u-sa-ltZ" secondAttribute="top" id="KED-jI-7ez"/>
+                            <constraint firstItem="VJU-c5-sWf" firstAttribute="centerX" secondItem="zLM-Ur-J3w" secondAttribute="centerX" id="esO-Y6-PNQ"/>
+                            <constraint firstItem="VJU-c5-sWf" firstAttribute="leading" secondItem="94u-sa-ltZ" secondAttribute="leading" constant="56" id="wEj-g5-2WK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="94u-sa-ltZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="heartRateDisplay" destination="VJU-c5-sWf" id="aOp-Jg-5uN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ore-IG-uNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.80000000000001" y="751.57421289355329"/>
         </scene>
     </scenes>
 </document>
